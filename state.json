@@ -1,0 +1,32 @@
+{
+  "disabled": {
+    "/home/hakergeniusz/.pi/agent/npm/node_modules/@narumitw/pi-tui-kit/dist/index.js": {
+      "path": "/home/hakergeniusz/.pi/agent/npm/node_modules/@narumitw/pi-tui-kit/dist/index.js",
+      "at": "2026-09-28T18:35:00.903Z",
+      "kind": "load",
+      "error": "Extension does not export a valid factory function: /home/hakergeniusz/.pi/agent/npm/node_modules/@narumitw/pi-tui-kit/dist/index.js",
+      "scope": "user"
+    },
+    "/home/hakergeniusz/.pi/agent/npm/node_modules/highlight.js/lib/index.js": {
+      "path": "/home/hakergeniusz/.pi/agent/npm/node_modules/highlight.js/lib/index.js",
+      "at": "2026-09-28T18:35:00.902Z",
+      "kind": "load",
+      "error": "Extension does not export a valid factory function: /home/hakergeniusz/.pi/agent/npm/node_modules/highlight.js/lib/index.js",
+      "scope": "user"
+    },
+    "/home/hakergeniusz/.pi/agent/npm/node_modules/grok-mermaid/src/index.ts": {
+      "path": "/home/hakergeniusz/.pi/agent/npm/node_modules/grok-mermaid/src/index.ts",
+      "at": "2026-09-28T18:35:00.902Z",
+      "kind": "load",
+      "error": "Extension does not export a valid factory function: /home/hakergeniusz/.pi/agent/npm/node_modules/grok-mermaid/src/index.ts",
+      "scope": "user"
+    },
+    "/home/hakergeniusz/.pi/agent/npm/node_modules/grok-mermaid/dist/index.js": {
+      "path": "/home/hakergeniusz/.pi/agent/npm/node_modules/grok-mermaid/dist/index.js",
+      "at": "2026-09-28T18:35:00.902Z",
+      "kind": "load",
+      "error": "Extension does not export a valid factory function: /home/hakergeniusz/.pi/agent/npm/node_modules/grok-mermaid/dist/index.js",
+      "scope": "user"
+    }
+  }
+}

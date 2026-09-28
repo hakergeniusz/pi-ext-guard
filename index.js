@@ -274,13 +274,21 @@ function projectDirOwning(absPath) {
 
 /** @returns {{file: string, scope: string, packageSource?: string} | null} */
 function ownerOf(absPath) {
-	const project = projectDirOwning(absPath) ?? (isUnder(absPath, projectDir()) ? projectDir() : null);
-	if (project) return { file: path.join(project, "settings.json"), scope: "project" };
+	// A project .pi that genuinely owns the path (it lives under its extensions/).
+	const owning = projectDirOwning(absPath);
+	if (owning) return { file: path.join(owning, "settings.json"), scope: "project" };
+	// agentDir nests inside projectDir() whenever pi runs from the home dir --
+	// ~/.pi/agent is under ~/.pi -- so this check has to come first. Testing
+	// projectDir() ahead of it classified every personal extension as project
+	// scope and disabled it through a ~/.pi/settings.json that does not exist.
 	if (isUnder(absPath, agentDir())) return { file: globalSettingsPath(), scope: "user" };
+	if (isUnder(absPath, projectDir())) return { file: path.join(projectDir(), "settings.json"), scope: "project" };
 	// Longest package root wins, so a package inside another package still matches.
+	// User scope breaks ties: from the home dir both root sets are the same paths,
+	// and a stable sort would otherwise hand the project one every time.
 	const candidates = [...packageRoots("project"), ...packageRoots("user")]
 		.filter((p) => isUnder(absPath, p.root))
-		.sort((a, b) => b.root.length - a.root.length);
+		.sort((a, b) => b.root.length - a.root.length || (a.scope === b.scope ? 0 : a.scope === "user" ? -1 : 1));
 	const owner = candidates[0];
 	if (owner) {
 		return {
