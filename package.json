@@ -1,0 +1,29 @@
+{
+  "name": "pi-ext-guard",
+  "version": "1.0.0",
+  "description": "Keeps one broken extension from taking the whole pi session down. Plain JS + type:module on purpose: jiti imports it natively with no transform cache to write, so the guard still loads when disk or /tmp is full.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "pi",
+    "pi-package",
+    "ext",
+    "guard"
+  ],
+  "main": "./index.js",
+  "pi": {
+    "extensions": [
+      "./index.js"
+    ]
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-ai": "*",
+    "@earendil-works/pi-agent-core": "*",
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-tui": "*"
+  },
+  "private": true
+}

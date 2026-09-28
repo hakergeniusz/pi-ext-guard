@@ -1,0 +1,10 @@
+{
+  "enabled": true,
+  "interceptExit": true,
+  "autoDisable": true,
+  "quarantineCrashes": true,
+  "notify": true,
+  "freeSpaceWarnBytes": 1073741824,
+  "ignore": [],
+  "logLimit": 50
+}
